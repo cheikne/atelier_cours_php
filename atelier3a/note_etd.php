@@ -25,6 +25,7 @@
 					<tr>
 						<td><label>Informatique   </label></td>
 						<td><input type="number"  name="infor"></td>
+						<td><input type="text"  id="demo" name="sess" value="blablabla" style="display: none;"></td>
 					</tr>
 				</table><br><br>
 				<div style="margin-left: 50%;">
@@ -34,5 +35,18 @@
 				</div>
 			</div>
 		</form>
+		<script type="text/javascript">
+			// var num = Math.random()*(50)+1;
+			var incr = (function () {
+			    var i = 1;
+
+			    return function () {
+			        return i++;
+			    }
+			})();
+			var num = incr();
+			document.getElementById('demo').value = "etd"+num;
+
+		</script>
 	</body>
 </html>
