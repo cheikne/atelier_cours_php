@@ -5,18 +5,30 @@
 	</head>
 	<body>
 		<?php 
-			session_start();
 			// if($_POST["ident"] == "ident" and $_POST["passwd"] =="passwd")
 			// 	header("Location:note_etd.php");
 			// else{
 			// 	echo "<script>alert('Mot de passe ou Identifiant incorrecte.!')</script>";
 			// 	header("Location:index.php");
 			// }
-			$etd1 = $_SESSION["etd1"];
-			$etd2 = $_SESSION["etd2"];
-		echo "<h1>L' etudiant ".$etd1[0]." est ".$etd1[1]. "  ".$etd1[2]."</h1>";
-		echo "<h1>L' etudiant ".$etd2[0]." est ".$etd2[1]. "  ".$etd2[2]."</h1>";
-		// echo "<h1>Le mail de ".$_SESSION["etd1"]." est ".$_SESSION["etd2"]."</h1>"
+		setcookie("lang","en",time()+3600*3);
+		$a =6;
+		$c=2;
+		$b = 4;
+		$tab = array("dhdh","kane",5=>"salif");
+		var_dump($tab);
+		echo "la valeur de tableau est :".$tab[4]."<br>";
+		
+		function somme(){
+			global $c;
+			$GLOBALS["a"] = $GLOBALS["b"] + $GLOBALS["c"];
+			echo "la valeur de a est :".$GLOBALS['a']."<br>";
+			$c = 45;
+		}
+		somme();
+		echo "la valeur de a est :".$a."<br>";
+		echo "la valeur de a est :".$c."<br>";
 		?>
+		<p>le cookie est :<?php echo htmlspecialchars($_COOKIE['lang'])?></p>
 	</body>
 </html>
